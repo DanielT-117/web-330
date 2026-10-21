@@ -1,7 +1,7 @@
 # web-330
 Enterprise JavaScript 2 class assignments
 
-# WEB 330 Enterprise JavaScript I
+# WEB 330 Enterprise JavaScript II
 
 ## Contributors
 
