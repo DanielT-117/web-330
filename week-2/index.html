@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+    Pragmatic JavaScript
+    Chapter 1
+    Programming Assignment
+
+    Author: Daniel Topete
+    Date: 10/30/2026
+    Filename: index.html
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roleplay Character Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div id="mainContainer">
+      <h1>Roleplay Character Generator</h1>
+      <p class="subtitle">Forge a hero worthy of legend</p>
+
+      <form id="characterForm">
+        <label for="heroName">Hero Name:</label><br />
+        <input type="text" id="heroName" name="heroName" required /><br />
+        <label for="heroGender">Hero Gender:</label><br />
+        <select id="heroGender" name="heroGender" required>
+          <option value="">Select...</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option></select>
+          <br />
+        <label for="heroClass">Hero Class:</label><br />
+        <select id="heroClass" name="heroClass" required>
+          <option value="">Select...</option>
+          <option value="warrior">Warrior</option>
+          <option value="mage">Mage</option>
+          <option value="rogue">Rogue</option></select>
+          <br />
+        <button id="generateHero">Create Character</button>
+      </form>
+
+      <div id="characterOutput"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

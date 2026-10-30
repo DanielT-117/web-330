@@ -1,0 +1,168 @@
+/*
+  Pragmatic JavaScript
+  Chapter 1
+  Programming Assignment
+
+  Author: Daniel Topete
+  Date: 10/30/2026
+  Filename: styles.css
+*/
+
+/* Fantasy theme: dark stone background with parchment panels and gold trim */
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 16px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top, #3a2c1f 0%, #1a130d 70%);
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2b1d0e;
+}
+
+#mainContainer {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  color: #e6b450;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.subtitle {
+  margin: 6px 0 24px;
+  text-align: center;
+  color: #c9a66b;
+  font-style: italic;
+}
+
+/* Form panel */
+#characterForm {
+  padding: 24px;
+  background: #f4e4c1;
+  border: 3px solid #8b5a2b;
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px #e6b450, 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+#characterForm label {
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #5a3a1a;
+}
+
+#characterForm input,
+#characterForm select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #2b1d0e;
+  background: #fffaf0;
+  border: 2px solid #8b5a2b;
+  border-radius: 4px;
+}
+
+#characterForm input:focus,
+#characterForm select:focus {
+  outline: none;
+  border-color: #e6b450;
+  box-shadow: 0 0 6px #e6b450;
+}
+
+#generateHero {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f4e4c1;
+  background: linear-gradient(#a0522d, #6b3410);
+  border: 2px solid #e6b450;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+#generateHero:hover {
+  box-shadow: 0 0 12px #e6b450;
+}
+
+#generateHero:active {
+  transform: scale(0.98);
+}
+
+/* Character card (hidden until a character is created) */
+#characterOutput:empty {
+  display: none;
+}
+
+.card {
+  margin-top: 28px;
+  padding: 24px;
+  background: #f4e4c1;
+  border: 3px solid #8b5a2b;
+  border-radius: 8px;
+  border-top-width: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  animation: reveal 0.4s ease-out;
+}
+
+.card p {
+  margin: 0;
+  padding: 8px 0;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid #c9a66b;
+}
+
+.card p:last-child {
+  border-bottom: none;
+}
+
+/* The first line holds the hero's name, so give it more weight */
+.card p:first-child {
+  font-size: 1.5rem;
+  color: #5a3a1a;
+}
+
+.card strong {
+  color: #8b5a2b;
+  margin-right: 4px;
+}
+
+/* Class-specific accent colors */
+.card.warrior {
+  border-top-color: #a32020;
+}
+
+.card.mage {
+  border-top-color: #2e4fa3;
+}
+
+.card.rogue {
+  border-top-color: #2f6b3a;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
