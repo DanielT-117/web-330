@@ -4,8 +4,8 @@
       Project 10-01
 
       Project to create a drag and drop jigsaw puzzle
-      Author: 
-      Date:   
+      Author:
+      Date:
 
       Filename: project10-01.js
 */
@@ -37,7 +37,7 @@ for (let i = 0; i < 48; i++) {
    piece.style.top = (rowNum - 1)*98 + 7 + "px";
    piece.style.left = (colNum - 1)*98 + 7 + "px";
    piece.draggable = false; // override the default draggability of images
-   puzzleBoard.appendChild(piece);      
+   puzzleBoard.appendChild(piece);
 }
 
 // Node list representing the puzzle pieces
