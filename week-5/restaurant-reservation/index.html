@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      Pragmatic JavaScript
+      Chapter 2
+      Programming Assignment
+
+      Author: Daniel Topete
+      Date: 11/20/2026
+      Filename: index.html
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Table Reservation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>The Copper Spoon</h1>
+      <p class="subtitle">Reserve your table</p>
+
+      <form id="reservationForm">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br />
+        <label for="tableNumber">Table Number:</label><br />
+        <input type="number" id="tableNumber" name="tableNumber" /><br />
+        <input type="submit" value="Reserve" />
+      </form>
+      <p id="message"></p>
+
+      <h2>Tables</h2>
+      <ul id="tableStatus"></ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

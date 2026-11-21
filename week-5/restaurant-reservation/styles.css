@@ -1,0 +1,230 @@
+/*
+  Pragmatic JavaScript
+  Chapter 2
+  Programming Assignment
+
+  Author: Daniel Topete
+  Date: 11/20/2026
+  Filename: styles.css
+*/
+
+/*
+  Garden cafe theme built from three colors:
+    --mint:   #f1f7ed  (light background / text on dark)
+    --forest: #243e36  (headings, buttons, reserved tables)
+    --sage:   #7ca982  (accents, borders, available tables)
+*/
+:root {
+  --mint: #f1f7ed;
+  --forest: #243e36;
+  --sage: #7ca982;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 48px 16px;
+  background-color: var(--mint);
+  /* soft sage dot pattern */
+  background-image: radial-gradient(var(--sage) 1px, transparent 1px);
+  background-size: 22px 22px;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Helvetica,
+    Arial,
+    sans-serif;
+  color: var(--forest);
+}
+
+/* Card with a dark forest header band */
+.form-container {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 0 28px 28px;
+  background: var(--mint);
+  border: 2px solid var(--forest);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 var(--sage);
+}
+
+h1 {
+  margin: 0 -28px;
+  padding: 28px 28px 4px;
+  background: var(--forest);
+  color: var(--mint);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  margin: 0 -28px 28px;
+  padding: 0 28px 24px;
+  background: var(--forest);
+  border-bottom: 6px solid var(--sage);
+  color: var(--sage);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Form: small uppercase labels, underlined inputs */
+form br {
+  display: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+input[type="text"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 8px 2px;
+  border: none;
+  border-bottom: 2px solid var(--sage);
+  border-radius: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: var(--forest);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-bottom-color: var(--forest);
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  border: 2px solid var(--forest);
+  border-radius: 999px;
+  background: var(--forest);
+  color: var(--mint);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+input[type="submit"]:hover {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: var(--forest);
+}
+
+/* Reservation result messages */
+#message {
+  min-height: 1.2em;
+  margin: 18px 0 0;
+  font-weight: 600;
+}
+
+#message.success,
+#message.error,
+#message.pending {
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+#message.success::before,
+#message.error::before {
+  display: inline-block;
+  width: 1.4em;
+  font-weight: 700;
+}
+
+#message.success {
+  background: var(--sage);
+  color: var(--forest);
+}
+
+#message.success::before {
+  content: "\2713"; /* check mark */
+}
+
+#message.error {
+  background: var(--forest);
+  color: var(--mint);
+}
+
+#message.error::before {
+  content: "\2715"; /* x mark */
+  color: var(--sage);
+}
+
+#message.pending {
+  border: 2px dashed var(--sage);
+  color: var(--sage);
+  font-style: italic;
+}
+
+/* Table availability shown as a grid of tiles */
+h2 {
+  margin: 30px 0 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+#tableStatus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#tableStatus li {
+  padding: 12px 8px;
+  border: 2px solid var(--sage);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+#tableStatus li.available {
+  background: var(--mint);
+  color: var(--forest);
+}
+
+#tableStatus li.reserved {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--mint);
+}
+
+@media (max-width: 400px) {
+  #tableStatus {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
